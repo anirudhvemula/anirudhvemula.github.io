@@ -693,32 +693,33 @@ small {
 }
 
 /* ============================================
-   Mobile + Tablet Fixes for Intro & About
+   Intro + About Responsive Fix (final clean version)
    ============================================ */
 @media (max-width: 992px) {
-  /* Let intro auto-size fully */
+  /* Intro grows naturally */
   #intro.full-height {
-    height: auto !important;   /* grow with content */
+    height: auto !important;
     min-height: auto !important;
-    display: block;            /* stack naturally */
-    padding: 4rem 1rem 2rem;   /* breathing room top/bottom */
+    display: block !important;
+    overflow: visible !important;   /* don’t clip content */
+    padding: 4rem 1rem 2rem;        /* space around content */
+    background: #558b86;            /* intro background */
   }
 
-  /* Scale typing headline so it doesn’t overflow */
+  /* Headline scaling */
   #intro h1 {
-    font-size: 1.8rem;         /* phones */
-    line-height: 1.2;
+    font-size: 1.8rem;
+    line-height: 1.3;
     word-break: break-word;
   }
 
   @media (min-width: 601px) and (max-width: 992px) {
     #intro h1 {
-      font-size: 2.2rem;       /* tablets */
-      line-height: 1.3;
+      font-size: 2.2rem;
     }
   }
 
-  /* Center intro content + socials */
+  /* Center content + socials */
   #intro .content {
     margin: 0 auto;
     text-align: center;
@@ -730,32 +731,17 @@ small {
     margin: 1.5rem 0;
   }
 
-  /* Buttons below socials */
   #intro .buttons {
     margin-top: 1rem;
     text-align: center;
   }
 
-  /* Force About to start AFTER intro */
+  /* About section starts below, dark text */
   #about {
-    padding-top: 4rem;   /* safe gap from intro */
     margin-top: 0;
+    padding-top: 3rem;
     clear: both;
-    color: #222;         /* dark readable font */
+    color: #222;
+    background: #fff;
   }
-}
-/* Force intro to expand and about to always start below */
-#intro.full-height {
-  height: auto !important;
-  min-height: auto !important;
-  display: block;
-  overflow: hidden;  /* contain floats if any */
-  padding-bottom: 2rem; /* breathing space before About */
-}
-
-#about {
-  clear: both;        /* ensure it starts below socials */
-  margin-top: 0;
-  padding-top: 3rem;  /* safe gap from intro */
-  color: #222;        /* readable dark text */
 }
