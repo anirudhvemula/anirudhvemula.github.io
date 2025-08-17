@@ -278,6 +278,15 @@ ul.side-nav.fixed.table-of-contents li:not(.logo) a span, ul#slide-out li:not(.l
   color: #333 !important;
 }
 
+.side-nav i {
+  width: 22px;             /* reserve space so text lines up */
+  font-size: 18px;         /* keep icons proportional */
+  margin-right: 10px;      /* spacing between icon + text */
+  vertical-align: middle;  /* vertically align with text */
+  line-height: 1;          /* fix uneven spacing */
+}
+
+
 li.logo span {
   display: block;
   font-size: 14px;
