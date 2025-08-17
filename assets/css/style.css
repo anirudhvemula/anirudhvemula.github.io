@@ -744,3 +744,18 @@ small {
     color: #222;         /* dark readable font */
   }
 }
+/* Force intro to expand and about to always start below */
+#intro.full-height {
+  height: auto !important;
+  min-height: auto !important;
+  display: block;
+  overflow: hidden;  /* contain floats if any */
+  padding-bottom: 2rem; /* breathing space before About */
+}
+
+#about {
+  clear: both;        /* ensure it starts below socials */
+  margin-top: 0;
+  padding-top: 3rem;  /* safe gap from intro */
+  color: #222;        /* readable dark text */
+}
