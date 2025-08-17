@@ -110,7 +110,7 @@
   font-size: 15px;
   letter-spacing: 1px;
   display: inline-block;
-  margin-top: 1.5em;
+  margin-top: 0 !important;
   border-radius: 5px;
   -webkit-border-radius: 5px;
 }
@@ -128,7 +128,8 @@
     gap: 20px;
     justify-content: flex-start;
     max-width: fit-content;
-    padding-left: 30px; /* Matches #intro.section .container *:not(span) padding */
+    margin-left: 0; /* Start from left edge */
+    padding-left: 0; /* No extra padding since content has no padding now */
   }
 }
 
@@ -139,6 +140,7 @@
     align-items: center;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
