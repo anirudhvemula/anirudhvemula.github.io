@@ -787,33 +787,32 @@ small {
 
 
 /* === Bulletproof side-nav alignment (Grid) === */
-/* === Bulletproof side-nav alignment (works with Font Awesome 5/6) === */
+/* --- Final side-nav alignment fix (Materialize + FA5) --- */
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
-  display: grid !important;
-  grid-template-columns: 22px 1fr;   /* icon column + text column */
-  align-items: center !important;     /* vertical centering */
-  column-gap: 10px;                   /* space between icon and text */
-  padding: 8px 0 !important;
-  line-height: 1.4 !important;
-  text-decoration: none;
-  color: #333;
+  display: flex !important;
+  align-items: center !important;      /* center icon + text */
+  gap: 10px;                           /* space between icon and text */
+  padding: 10px 14px !important;
+  line-height: 1.6 !important;          /* override Materialize 100% */
+  height: auto !important;              /* don’t lock height */
 }
 
-ul.side-nav.fixed.table-of-contents li:not(.logo) > a > i.fas,
-ul.side-nav.fixed.table-of-contents li:not(.logo) > a > i.far,
-ul.side-nav.fixed.table-of-contents li:not(.logo) > a > i.fab {
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.fas,
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.far,
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.fab {
   font-size: 18px !important;
-  line-height: 1 !important;
-  width: 22px;                        /* matches the icon column */
+  width: 22px;                          /* keeps column even */
   text-align: center;
-  justify-self: center;
-  align-self: center;
+  flex-shrink: 0;                        /* icon never squashes */
+  line-height: 1 !important;
 }
 
-ul.side-nav.fixed.table-of-contents li:not(.logo) > a > span {
-  align-self: center;
-  line-height: 1.4 !important;
-  margin: 0;
-  padding: 0;
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a span {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.6 !important;           /* sync with parent link */
+  position: relative;
+  top: 1px;                              /* nudge down if needed */
 }
 
