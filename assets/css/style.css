@@ -124,7 +124,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: center; /* Centers all buttons */
+  justify-content: flex-start;
+  max-width: fit-content; /* Prevents container from stretching full width */
 }
 
 .buttons {
