@@ -120,28 +120,13 @@
   background-color: white;
 }
 
-/* For desktop - match intro content alignment */
-@media (min-width: 993px) {
-  .button-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: flex-start;
-    max-width: fit-content;
-    margin-left: 0; /* Start from left edge */
-    padding-left: 0; /* No extra padding since content has no padding now */
-  }
-}
-
-/* For mobile - keep centered */
-@media (max-width: 992px) {
-  .button-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-start;
+  margin: 2rem 0 0 0;
+  padding: 0;
 }
 
 .buttons {
@@ -1330,6 +1315,15 @@ ul#nav-mobile li:not(.logo) > a.active {
 /* Remove conflicting margin from contactme */
 .contactme {
   margin-top: 0.5rem !important; /* Override the existing 1.5em */
+}
+
+/* For larger screens - align buttons to left under social icons */
+@media (min-width: 993px) {
+  .buttons {
+    text-align: left;
+    margin-left: 0; /* Align with social icons */
+    padding-left: 0;
+  }
 }
 
 /* For mobile/tablet - keep buttons centered */
