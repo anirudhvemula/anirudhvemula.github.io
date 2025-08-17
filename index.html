@@ -67,15 +67,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="side-nav fixed table-of-contents">
 <ul class="side-nav fixed table-of-contents">
   <!-- Profile + Name -->
-  <li class="logo">
-    <a id="logo-container" aria-label="Navigate to the beginning of the page"
-       href="#intro" class="brand-logo teal-text">
-      <div class="profile-pic">
-        <img src="assets/img/profile.jpg" alt="Anirudh Vemula" />
-      </div>
-      <span>Anirudh Vemula</span>
-    </a>
-  </li>
+<li class="logo">
+  <a id="logo-container" aria-label="Back to top"
+     href="#intro" class="brand-logo teal-text tooltipped"
+     data-position="right" data-tooltip="Back to top">
+    <div class="profile-pic">
+      <img src="assets/img/passport-new.jpg" alt="Anirudh Vemula" />
+    </div>
+    <span>Anirudh Vemula</span>
+  </a>
+</li>
+
 
   <!-- Navigation Links -->
   <li><a href="#about"><i class="material-icons">person</i> About</a></li>
@@ -1112,6 +1114,13 @@ of each drug container to estimate the degradation of the drug.
       })
     })
   </script>
-</body>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    M.Tooltip.init(elems, {});
+  });
+</script>
 
+  
+</body>
 </html>
