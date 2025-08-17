@@ -787,26 +787,27 @@ small {
 
 
 /* Force vertical centering of side-nav icons + labels */
-/* Side-nav icon + label alignment */
+/* 🚨 FINAL override for side-nav labels */
 ul.side-nav.fixed.table-of-contents li:not(.logo) a {
   display: flex !important;
-  align-items: center !important;   /* vertical centering */
-  gap: 8px;
-  padding: 6px 0 !important;
-  line-height: normal !important;
+  align-items: center !important;
+  gap: 10px;
+  padding: 8px 0 !important;
+  line-height: 1.5 !important;      /* reset weird 100% line-height */
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a i {
+  flex: 0 0 20px;
   font-size: 18px;
-  width: 22px;
   text-align: center;
-  flex-shrink: 0;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span {
-  display: flex !important;         /* make text itself a flexbox */
-  align-items: center !important;   /* center the actual text glyph */
-  line-height: 1.2 !important;
+  flex: 1;
+  display: flex !important;         /* flex container for the text */
+  align-items: center !important;   /* vertically center text itself */
+  line-height: 1.5 !important;      /* matches parent */
+  height: 100%;                     /* force it to fill link height */
 }
 
 
