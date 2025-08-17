@@ -1267,3 +1267,80 @@ ul#nav-mobile li:not(.logo) > a.active {
     border-left: 3px solid #008073 !important;
     padding-left: 15px !important;       /* Adjust for border */
 }
+
+/* ========================================
+   BUTTON ALIGNMENT FIXES FOR INTRO SECTION
+   ADD THIS TO YOUR CSS
+   ======================================== */
+
+/* Create a container for buttons */
+.intro-buttons {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Align buttons horizontally with some spacing */
+.readme, .contactme {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.5rem 0.75rem; /* Add horizontal spacing between buttons */
+}
+
+/* Remove conflicting margin from contactme */
+.contactme {
+  margin-top: 0.5rem !important; /* Override the existing 1.5em */
+}
+
+/* For larger screens - align buttons to left under social icons */
+@media (min-width: 993px) {
+  .intro-buttons {
+    text-align: left;
+    margin-left: 0; /* Align with social icons */
+    padding-left: 0;
+  }
+}
+
+/* For mobile/tablet - keep buttons centered */
+@media (max-width: 992px) {
+  .intro-buttons {
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 300px;
+  }
+  
+  .readme, .contactme {
+    margin: 0.5rem 0.5rem;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  @media (max-width: 480px) {
+    .readme, .contactme {
+      display: block;
+      margin: 0.75rem auto;
+      width: 200px;
+      text-align: center;
+    }
+  }
+}
+
+/* Improve button hover effects */
+.readme:hover {
+  color: white !important;
+  background-color: #00796b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 121, 107, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contactme:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Add smooth transitions */
+.readme, .contactme {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
