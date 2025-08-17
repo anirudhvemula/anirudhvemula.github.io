@@ -1332,15 +1332,6 @@ ul#nav-mobile li:not(.logo) > a.active {
   margin-top: 0.5rem !important; /* Override the existing 1.5em */
 }
 
-/* For larger screens - align buttons to left under social icons */
-@media (min-width: 993px) {
-  .buttons {
-    text-align: left;
-    margin-left: 0; /* Align with social icons */
-    padding-left: 0;
-  }
-}
-
 /* For mobile/tablet - keep buttons centered */
 @media (max-width: 992px) {
   .buttons {
