@@ -786,29 +786,34 @@ small {
 }
 
 
-/* Force vertical centering of side-nav icons + labels */
-/* --- Fix side-nav icon + text alignment --- */
-ul.side-nav.fixed.table-of-contents li:not(.logo) a {
-  display: flex !important;           /* put icon + text on one line */
-  align-items: center !important;     /* vertically center them */
-  gap: 10px;                          /* space between icon and text */
-  padding: 10px 12px !important;      /* even spacing around items */
+/* === Bulletproof side-nav alignment (Grid) === */
+/* === Bulletproof side-nav alignment (works with Font Awesome 5/6) === */
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
+  display: grid !important;
+  grid-template-columns: 22px 1fr;   /* icon column + text column */
+  align-items: center !important;     /* vertical centering */
+  column-gap: 10px;                   /* space between icon and text */
+  padding: 8px 0 !important;
+  line-height: 1.4 !important;
   text-decoration: none;
   color: #333;
-  line-height: 1.4 !important;        /* reset weird 100% line-height */
 }
 
-ul.side-nav.fixed.table-of-contents li:not(.logo) a i {
-  font-size: 18px;                    /* consistent icon size */
-  width: 22px;                        /* reserve width so text lines up */
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a > i.fas,
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a > i.far,
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a > i.fab {
+  font-size: 18px !important;
+  line-height: 1 !important;
+  width: 22px;                        /* matches the icon column */
   text-align: center;
+  justify-self: center;
+  align-self: center;
 }
 
-ul.side-nav.fixed.table-of-contents li:not(.logo) a span {
-  flex: 1;                            /* text uses remaining space */
-  line-height: 1.4 !important;        /* match with icon */
-  position: relative;
-  top: 1px;                           /* tiny nudge to center text */
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a > span {
+  align-self: center;
+  line-height: 1.4 !important;
+  margin: 0;
+  padding: 0;
 }
-
 
