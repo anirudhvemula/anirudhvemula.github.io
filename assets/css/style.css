@@ -119,9 +119,31 @@
   color: #00796b;
   background-color: white;
 }
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between groups */
+}
+
+.buttons {
+  display: flex;
+  gap: 10px; /* Space between Read More and Contact Me */
+}
+
+.social {
+  display: flex;
+  gap: 10px; /* Space between social icons */
+}
+
+
+
+
 /* main body */
 
 /* body-color */
+
+
 
 body {
   color: #333;
