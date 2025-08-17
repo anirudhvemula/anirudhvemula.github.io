@@ -120,12 +120,26 @@
   background-color: white;
 }
 
-.button-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: flex-start;
-  max-width: fit-content; /* Prevents container from stretching full width */
+/* For desktop - match intro content alignment */
+@media (min-width: 993px) {
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: fit-content;
+    padding-left: 30px; /* Matches #intro.section .container *:not(span) padding */
+  }
+}
+
+/* For mobile - keep centered */
+@media (max-width: 992px) {
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
 }
 
 .buttons {
