@@ -796,21 +796,84 @@ ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
   height: auto !important;
 }
 
+/* === NAVIGATION ICON ALIGNMENT FIXES === */
+
+/* Desktop Side Navigation - Icon and Text Alignment */
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 20px !important;
+  line-height: 1.4 !important;
+  height: auto !important;
+  box-sizing: content-box;
+  color: #333 !important;
+  transition: all 0.3s ease;
+}
+
+/* Icon Styling - Consistent Width and Alignment */
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.fas,
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.far,
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.fab {
-  font-size: 18px !important;
-  width: 22px;                      /* keeps icons aligned in a column */
-  text-align: center;
+  font-size: 16px !important;
+  width: 20px !important;
+  text-align: center !important;
   line-height: 1 !important;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  color: #008073 !important;
 }
 
+/* Text Styling */
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a span {
   margin: 0 !important;
   padding: 0 !important;
-  line-height: 1.5 !important;      /* matches parent */
-  position: relative;
-  top: 1px;                         /* tiny nudge if still high */
+  line-height: 1.4 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #333 !important;
 }
 
+/* Hover States */
+ul.table-of-contents li:not(.logo) a:hover i.fas,
+ul.table-of-contents li:not(.logo) a:hover i.far,
+ul.table-of-contents li:not(.logo) a:hover i.fab {
+  color: #004d40 !important;
+}
+
+ul.table-of-contents li:not(.logo) a:hover span {
+  color: #004d40 !important;
+  font-weight: 500 !important;
+}
+
+/* Mobile Navigation Fixes */
+@media (max-width: 992px) {
+  /* Mobile side nav items */
+  ul#slide-out li:not(.logo) > a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 15px 20px !important;
+    color: #333 !important;
+  }
+  
+  ul#slide-out li:not(.logo) > a i.fas,
+  ul#slide-out li:not(.logo) > a i.far,
+  ul#slide-out li:not(.logo) > a i.fab {
+    font-size: 16px !important;
+    width: 20px !important;
+    text-align: center !important;
+    color: #008073 !important;
+    flex-shrink: 0 !important;
+  }
+  
+  ul#slide-out li:not(.logo) > a span {
+    font-size: 14px !important;
+    color: #333 !important;
+  }
+  
+  /* Fix mobile hamburger icon */
+  nav a.button-collapse i {
+    color: #009688 !important;
+  }
+}
