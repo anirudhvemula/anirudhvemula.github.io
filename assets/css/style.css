@@ -1274,7 +1274,7 @@ ul#nav-mobile li:not(.logo) > a.active {
    ======================================== */
 
 /* Create a container for buttons */
-.intro-buttons {
+.buttons {
   margin-top: 2rem;
   text-align: center;
   width: 100%;
@@ -1294,7 +1294,7 @@ ul#nav-mobile li:not(.logo) > a.active {
 
 /* For larger screens - align buttons to left under social icons */
 @media (min-width: 993px) {
-  .intro-buttons {
+  .buttons {
     text-align: left;
     margin-left: 0; /* Align with social icons */
     padding-left: 0;
@@ -1303,7 +1303,7 @@ ul#nav-mobile li:not(.logo) > a.active {
 
 /* For mobile/tablet - keep buttons centered */
 @media (max-width: 992px) {
-  .intro-buttons {
+  .buttons {
     text-align: center;
     margin: 1.5rem auto;
     max-width: 300px;
