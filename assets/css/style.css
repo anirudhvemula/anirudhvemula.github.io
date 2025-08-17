@@ -787,27 +787,28 @@ small {
 
 
 /* Force vertical centering of side-nav icons + labels */
-/* 🚨 FINAL override for side-nav labels */
+/* --- Fix side-nav icon + text alignment --- */
 ul.side-nav.fixed.table-of-contents li:not(.logo) a {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px;
-  padding: 8px 0 !important;
-  line-height: 1.5 !important;      /* reset weird 100% line-height */
+  display: flex !important;           /* put icon + text on one line */
+  align-items: center !important;     /* vertically center them */
+  gap: 10px;                          /* space between icon and text */
+  padding: 10px 12px !important;      /* even spacing around items */
+  text-decoration: none;
+  color: #333;
+  line-height: 1.4 !important;        /* reset weird 100% line-height */
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a i {
-  flex: 0 0 20px;
-  font-size: 18px;
+  font-size: 18px;                    /* consistent icon size */
+  width: 22px;                        /* reserve width so text lines up */
   text-align: center;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span {
-  flex: 1;
-  display: flex !important;         /* flex container for the text */
-  align-items: center !important;   /* vertically center text itself */
-  line-height: 1.5 !important;      /* matches parent */
-  height: 100%;                     /* force it to fill link height */
+  flex: 1;                            /* text uses remaining space */
+  line-height: 1.4 !important;        /* match with icon */
+  position: relative;
+  top: 1px;                           /* tiny nudge to center text */
 }
 
 
