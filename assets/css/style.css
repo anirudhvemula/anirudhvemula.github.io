@@ -786,33 +786,31 @@ small {
 }
 
 
-/* === Bulletproof side-nav alignment (Grid) === */
-/* --- Final side-nav alignment fix (Materialize + FA5) --- */
+/* === Final fix: align side-nav icons + labels === */
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
   display: flex !important;
-  align-items: center !important;      /* center icon + text */
-  gap: 10px;                           /* space between icon and text */
+  align-items: center !important;   /* vertical centering */
+  gap: 10px;                        /* space between icon + text */
   padding: 10px 14px !important;
-  line-height: 1.6 !important;          /* override Materialize 100% */
-  height: auto !important;              /* don’t lock height */
+  line-height: 1.5 !important;      /* reset Materialize 100% */
+  height: auto !important;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.fas,
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.far,
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a i.fab {
   font-size: 18px !important;
-  width: 22px;                          /* keeps column even */
+  width: 22px;                      /* keeps icons aligned in a column */
   text-align: center;
-  flex-shrink: 0;                        /* icon never squashes */
   line-height: 1 !important;
+  flex-shrink: 0;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) > a span {
-  display: inline-block;
   margin: 0 !important;
   padding: 0 !important;
-  line-height: 1.6 !important;           /* sync with parent link */
+  line-height: 1.5 !important;      /* matches parent */
   position: relative;
-  top: 1px;                              /* nudge down if needed */
+  top: 1px;                         /* tiny nudge if still high */
 }
 
