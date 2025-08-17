@@ -120,22 +120,29 @@
   background-color: white;
 }
 
-/* For larger screens - align buttons to left under social icons */
+/* For desktop - match intro content alignment */
 @media (min-width: 993px) {
-  .buttons {
-    text-align: left;
-    margin-left: 0; /* Align with social icons */
-    padding-left: 0;
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: fit-content;
+    margin-left: 0; /* Start from left edge */
+    padding-left: 0; /* No extra padding since content has no padding now */
   }
 }
 
-/* For mobile/tablet - keep buttons centered */
+/* For mobile - keep centered */
 @media (max-width: 992px) {
-  .buttons {
-    text-align: center;
-    margin: 1.5rem auto;
-    max-width: 300px;
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
+}
 
 .buttons {
   display: flex;
