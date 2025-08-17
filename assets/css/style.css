@@ -278,28 +278,6 @@ ul.side-nav.fixed.table-of-contents li:not(.logo) a span, ul#slide-out li:not(.l
   color: #333 !important;
 }
 
-.side-nav i {
-  width: 22px;             /* reserve space so text lines up */
-  font-size: 18px;         /* keep icons proportional */
-  margin-right: 10px;      /* spacing between icon + text */
-  vertical-align: middle;  /* vertically align with text */
-  line-height: 1;          /* fix uneven spacing */
-}
-
-/* Ensure side nav icons + text align nicely */
-.side-nav li a {
-  display: flex;               /* align icon + text on one row */
-  align-items: center;         /* vertical centering */
-  line-height: 1.5rem !important; /* normalize text line height */
-}
-
-.side-nav li a i {
-  margin-right: 12px;          /* space between icon + text */
-  font-size: 18px;             /* consistent size */
-  min-width: 20px;             /* reserve space for alignment */
-  text-align: center;
-}
-
 
 li.logo span {
   display: block;
@@ -808,30 +786,7 @@ small {
 }
 
 /* --- Fix: perfectly align side-nav icons + labels --- */
-ul.side-nav.fixed.table-of-contents li:not(.logo) a {
-  display: inline-flex !important;   /* beat display:block */
-  align-items: center !important;    /* vertical centering */
-  gap: 10px;                         /* space between icon & text */
-  height: auto !important;
-  line-height: 1.4 !important;       /* normalize text */
-  padding: 10px 0 12px !important;   /* keep your spacing */
-}
 
-ul.side-nav.fixed.table-of-contents li:not(.logo) a i {
-  min-width: 22px;                   /* align all labels vertically */
-  text-align: center;
-  font-size: 18px;
-  line-height: 1;                    /* icon box height = glyph */
-  vertical-align: middle;
-}
-
-/* If any label text still looks a tad high, this evens it out */
-ul.side-nav.fixed.table-of-contents li:not(.logo) a span {
-  line-height: 1.2;
-  display: inline-block;
-}
-
-/* Force side-nav items to align icons + labels properly */
 ul.side-nav.fixed.table-of-contents li:not(.logo) a {
   display: flex !important;          /* put icon + text on one line */
   align-items: center !important;    /* vertical centering */
