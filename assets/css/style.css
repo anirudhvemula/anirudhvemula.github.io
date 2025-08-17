@@ -653,7 +653,45 @@ small {
   }
 }
 
+/* Ensure About starts right after social on mobile + tablet */
 @media (max-width: 600px) {
+  #intro.full-height {
+    height: auto !important;   /* let content decide height */
+    min-height: 100vh;         /* fallback full height */
+  }
+
+  #about {
+    margin-top: 2rem;
+    clear: both;
+  }
+}
+
+/* Tablet refinements (601px–992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  #intro.full-height {
+    height: auto !important;
+    min-height: 80vh;   /* not too tall, not too small */
+    display: flex;      /* center container vertically */
+    align-items: center;
+  }
+
+  #intro .content {
+    margin: 0 auto;       /* remove large left margin */
+    text-align: center;   /* center all intro text + buttons */
+    max-width: 85%;       /* prevent overly wide lines */
+  }
+
+  #intro .social {
+    text-align: center;   /* center icons under text */
+    margin-top: 1rem;
+  }
+
+  #about {
+    margin-top: 3rem;     /* clean separation */
+    clear: both;
+  }
+}
+
   h2 {
     font-size: 22px;
     line-height: 200%;
