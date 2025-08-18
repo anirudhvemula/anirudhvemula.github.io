@@ -1425,29 +1425,3 @@ ul#nav-mobile li:not(.logo) > a.active {
   display: block;
 }
 
-/* Dropdown*/
-.side-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 220px;
-}
-
-.side-nav li a {
-  display: flex;
-  align-items: center;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: #004d40;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.side-nav li a:hover {
-  background: rgba(0, 77, 64, 0.1);
-}
-
-.side-nav li i {
-  margin-right: 10px;
-}
-
