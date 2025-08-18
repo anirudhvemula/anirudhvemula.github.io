@@ -76,12 +76,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
     <li><a href="#projects"><i class="fas fa-sitemap"></i><span>Projects</span></a></li>
 	<li><a href="#skills"><i class="fas fa-code"></i><span>Skills</span></a></li>
-    <li><a href="#certifications"><i class="fas fa-scroll"></i><span>Certifications</span></a></li>
-    <li><a href="#memberships"><i class="fas fa-users"></i><span>Memberships</span></a></li>
-    <li><a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a></li>
-    <li><a href="#blogs"><i class="fas fa-pen-nib"></i><span>Blogs</span></a></li>
-    <li><a href="#awards"><i class="fas fa-trophy"></i><span>Awards</span></a></li>
-    <li><a href="#recommendations"><i class="fas fa-thumbs-up"></i><span>Recommendations</span></a></li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">
+      <i class="fas fa-award"></i><span>Achievements</span> <i class="fas fa-caret-down caret"></i>
+    </a>
+    <ul class="dropdown-content">
+      <li><a href="#certifications"><i class="fas fa-scroll"></i><span>Certifications</span></a></li>
+      <li><a href="#memberships"><i class="fas fa-users"></i><span>Memberships</span></a></li>
+      <li><a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a></li>
+      <li><a href="#blogs"><i class="fas fa-pen-nib"></i><span>Blogs</span></a></li>
+      <li><a href="#awards"><i class="fas fa-trophy"></i><span>Awards</span></a></li>
+      <li><a href="#recommendations"><i class="fas fa-thumbs-up"></i><span>Recommendations</span></a></li>
+    </ul>
+	</li>
     <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
     <li><a href="assets/Anirudh Vemula_2025.pdf" target="_blank"><i class="fas fa-file-pdf"></i><span>Resume</span></a></li>
   </ul>
@@ -104,12 +111,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
     <li><a href="#projects"><i class="fas fa-sitemap"></i><span>Projects</span></a></li>
 	<li><a href="#skills"><i class="fas fa-code"></i><span>Skills</span></a></li>
-    <li><a href="#certifications"><i class="fas fa-scroll"></i><span>Certifications</span></a></li>
-    <li><a href="#memberships"><i class="fas fa-users"></i><span>Memberships</span></a></li>
-    <li><a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a></li>
-    <li><a href="#blogs"><i class="fas fa-pen-nib"></i><span>Blogs</span></a></li>
-    <li><a href="#awards"><i class="fas fa-trophy"></i><span>Awards</span></a></li>
-    <li><a href="#recommendations"><i class="fas fa-thumbs-up"></i><span>Recommendations</span></a></li>
+	<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">
+      <i class="fas fa-award"></i><span>Achievements</span> <i class="fas fa-caret-down caret"></i>
+    </a>
+    <ul class="dropdown-content">
+      <li><a href="#certifications"><i class="fas fa-scroll"></i><span>Certifications</span></a></li>
+      <li><a href="#memberships"><i class="fas fa-users"></i><span>Memberships</span></a></li>
+      <li><a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a></li>
+      <li><a href="#blogs"><i class="fas fa-pen-nib"></i><span>Blogs</span></a></li>
+      <li><a href="#awards"><i class="fas fa-trophy"></i><span>Awards</span></a></li>
+      <li><a href="#recommendations"><i class="fas fa-thumbs-up"></i><span>Recommendations</span></a></li>
+    </ul>
+	</li>
     <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
     <li><a href="assets/Anirudh Vemula_2025.pdf" target="_blank"><i class="fas fa-file-pdf"></i><span>Resume</span></a></li>
   </ul>
@@ -1055,6 +1069,15 @@ of each drug container to estimate the degradation of the drug.
   });
 </script>
 
+<!-- JS -->
+<script>
+document.querySelectorAll('.dropbtn').forEach(button => {
+  button.addEventListener('click', () => {
+    const dropdown = button.parentElement;
+    dropdown.classList.toggle('open');
+  });
+});
+</script>
   
 </body>
 </html>
