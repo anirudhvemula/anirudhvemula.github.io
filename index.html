@@ -1071,13 +1071,19 @@ of each drug container to estimate the degradation of the drug.
 
 <!-- JS -->
 <script>
-document.querySelectorAll('.dropbtn').forEach(button => {
-  button.addEventListener('click', () => {
-    const dropdown = button.parentElement;
-    dropdown.classList.toggle('open');
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all dropdown buttons
+  document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', () => {
+      const dropdown = button.parentElement;
+
+      // Toggle open class
+      dropdown.classList.toggle('open');
+    });
   });
 });
 </script>
+
   
 </body>
 </html>
