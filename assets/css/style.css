@@ -1425,6 +1425,7 @@ ul#nav-mobile li:not(.logo) > a.active {
   display: block;
 }
 
+/* Dropdown*/
 .side-nav {
   list-style: none;
   padding: 0;
@@ -1450,6 +1451,7 @@ ul#nav-mobile li:not(.logo) > a.active {
   margin-right: 10px;
 }
 
+/* Dropdown hidden by default */
 .dropdown-content {
   display: none;
   list-style: none;
@@ -1457,16 +1459,19 @@ ul#nav-mobile li:not(.logo) > a.active {
   margin: 0;
 }
 
+/* Sub-items styling */
 .dropdown-content li a {
   padding: 8px 32px; /* indent sub-items */
   font-weight: normal;
 }
 
+/* Caret rotation */
 .caret {
   margin-left: auto;
   transition: transform 0.3s;
 }
 
+/* When dropdown is open */
 .dropdown.open .dropdown-content {
   display: block;
 }
