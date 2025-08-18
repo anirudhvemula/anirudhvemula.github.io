@@ -1389,3 +1389,7 @@ ul#nav-mobile li:not(.logo) > a.active {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
+.profile-pic {
+  border: 10px solid red !important;
+}
