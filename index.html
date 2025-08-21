@@ -1032,13 +1032,29 @@ of each drug container to estimate the degradation of the drug.
               class="hoverline" target="_blank">Linkedin.com/in/anirudh-vemula</a></a>
         </p>
       </div>
-	  <form id="myForm" action="https://formspree.io/f/mnnzkyoa" method="POST">
-        <input name="email" type="email">
-        <input type="text" name="_honey" style="display:none">
+		<form action="https://formspree.io/f/mnnzkyoa" method="POST" id="contact" novalidate>
+		  <label>
+			Your name
+			<input type="text" name="name" required>
+		  </label>
+
+		  <label>
+			Your email
+			<input type="email" name="email" required>
+		  </label>
+
+		  <label>
+			Message
+			<textarea name="message" rows="6" required></textarea>
+		  </label>
+
+		  <!-- Honeypot (hidden field to trap bots) -->
+		  <input type="text" name="_honey" style="display:none">
+	  
 		<button class="g-recaptcha" data-sitekey="6LcQgK0rAAAAANXIYAA6zvNHpBszHnkLevSMzpYJ"
-            data-callback='onSubmit' data-action='submit'>Submit</button>
+            data-callback='onSubmit' data-action='submit'>Send</button>
 		
-    </form>
+		</form>
 	<p id="form-status" role="status" aria-live="polite"></p>
 
     </section>
