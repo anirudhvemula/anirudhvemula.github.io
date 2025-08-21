@@ -1,0 +1,21 @@
+{
+  "name": "Anirudh Vemula Portfolio",
+  "short_name": "AVemula",
+  "description": "Licensed Civil Engineer & Project Manager delivering Architecture and Engineering projects across India and the U.S.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
