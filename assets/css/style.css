@@ -1570,3 +1570,43 @@ ul.side-nav.fixed li.logo + li {
 
 /* Main content offset (keep matching your sidebar width) */
 main { padding-left: 260px !important; }
+
+/* === FINAL PROFILE PICTURE + SPACING FIX === */
+ul.side-nav.fixed li.logo {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;  /* push content down from top */
+  width: 100% !important;
+  padding: 20px 0 10px !important;         /* breathing space on top, smaller bottom */
+  margin: 0 !important;
+  border-bottom: 1px solid #ddd !important;
+  background: #fafafa !important;
+}
+
+/* Profile picture */
+.profile-pic {
+  width: 140px !important;
+  height: 140px !important;
+  margin: 0 auto !important;
+  border: 4px solid rgba(0, 77, 64, 0.4) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;             /* optional cleaner look */
+}
+
+.profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Tight gap between photo and first nav item */
+ul.side-nav.fixed li.logo + li {
+  margin-top: 8px !important;
+}
