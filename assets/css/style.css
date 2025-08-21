@@ -1471,3 +1471,102 @@ ul.side-nav.fixed li.logo {
   min-height: 220px !important;
   padding: 24px !important;
 }
+
+/* === SIDENAV: single-column, no wrapping, bigger labels === */
+ul.side-nav,
+ul.side-nav.fixed,
+ul#nav-mobile {
+  display: block !important;            /* never flex/inline */
+  width: 260px !important;              /* your chosen width */
+  overflow: visible !important;         /* let logo breathe */
+}
+
+/* Each list item is a full row */
+ul.side-nav li,
+ul.side-nav.fixed li,
+ul#nav-mobile li {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+  white-space: normal !important;       /* stop side-by-side items */
+}
+
+/* Anchor spans the full row */
+ul.side-nav.fixed li:not(.logo) > a,
+ul#nav-mobile li:not(.logo) > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 20px !important;
+  min-height: 48px !important;
+  width: 100% !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Bigger labels to match bigger icons */
+ul.side-nav.fixed li:not(.logo) > a span,
+ul#nav-mobile li:not(.logo) > a span {
+  font-size: 16px !important;           /* up from 14px */
+  font-weight: 400 !important;
+}
+
+/* Icon sizing you liked */
+ul.side-nav.fixed li:not(.logo) > a i,
+ul#nav-mobile li:not(.logo) > a i {
+  font-size: 22px !important;
+  width: 28px !important;
+  line-height: 22px !important;
+  flex-shrink: 0 !important;
+}
+
+/* === LOGO / PROFILE: centered at top, list starts below === */
+ul.side-nav.fixed li.logo {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 220px !important;         /* room for bigger photo */
+  padding: 24px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #ddd !important;
+}
+
+/* Make extra-sure nothing wraps around the image */
+ul.side-nav.fixed li.logo,
+.profile-pic {
+  float: none !important;
+  clear: both !important;
+}
+
+/* Centered circular photo */
+.profile-pic {
+  width: 160px !important;
+  height: 160px !important;
+  margin: 0 auto !important;
+  border: 5px solid rgba(0, 77, 64, 0.4) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f5f5f5 !important;
+  box-sizing: border-box !important;
+}
+.profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Space between the photo block and the first nav item */
+ul.side-nav.fixed li.logo + li {
+  margin-top: 8px !important;
+}
+
+/* Main content offset (keep matching your sidebar width) */
+main { padding-left: 260px !important; }
