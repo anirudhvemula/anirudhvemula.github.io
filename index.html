@@ -3,19 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!--
-  <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' https://www.google.com https://www.gstatic.com https://www.recaptcha.net;
-  connect-src 'self' https://formspree.io https://api.formspree.io;
-  frame-src https://www.google.com https://www.recaptcha.net;
-  img-src 'self' data:;
-  style-src 'self' 'unsafe-inline';
-  base-uri 'self';
-  ">
-  -->
 
 
 <!-- Google Tag Manager -->
@@ -37,16 +26,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   <title>Anirudh Vemula, PE | Project Manager</title>
   <meta name="description" content="Licensed civil engineer & PM delivering Architecture and Engineering projects across India and USA.">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-126939217-2');
-  </script>
   
   <!-- Canonical -->
 <link rel="canonical" href="https://anirudhvemula.github.io/">
@@ -154,7 +133,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 			<br><br>
 
-			<h8>Please use side navigation bar or scroll down to continue reading...</h8>
+			<p class="grey-text text-darken-1" style="margin-top:1rem">
+			  Please use side navigation bar or scroll down to continue reading...
+			</p>
 
               <!-- <a href="https://angel.co/u/anirudh_vemula" target="_blank">
                 <button class="icon-btn angellist">
@@ -1157,6 +1138,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sidenavs = document.querySelectorAll('.sidenav, .side-nav, #slide-out');
+    M.Sidenav.init(sidenavs, { edge: 'left' });
+
+    var spies = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(spies, { scrollOffset: 0 });
+  });
 </script>
 
 
