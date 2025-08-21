@@ -1160,95 +1160,64 @@ of each drug container to estimate the degradation of the drug.
 </script>
 
 
-
-<script>
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact');
   const statusEl = document.getElementById('form-status');
   const btn = document.getElementById('submitBtn');
 
-  function show(msg) { statusEl.textContent = msg; }
+  function show(msg){ statusEl.textContent = msg; }
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function onSubmit(e) {
     e.preventDefault();
+
+    // Always derive the form from the event:
+    const formEl = e.currentTarget;               // <- GUARANTEED to be the <form>
+    let fd;
+    try { fd = new FormData(formEl); }            // <- avoids the TypeError
+    catch (err) { show('Form not found.'); return; }
+
     btn.disabled = true;
-    show('Verifying reCAPTCHA…');
+    show('Verifying…');
 
     if (typeof grecaptcha === 'undefined') {
-      show('reCAPTCHA failed to load (blocked by CSP/extension/network).');
-      btn.disabled = false;
-      return;
+      show('reCAPTCHA failed to load.');
+      btn.disabled = false; return;
     }
 
     grecaptcha.ready(function () {
       grecaptcha.execute('6LcQgK0rAAAAANXIYAA6zvNHpBszHnkLevSMzpYJ', { action: 'contact_form' })
         .then(async function (token) {
-          // attach token
-          const tokenField = document.getElementById('g-recaptcha-response');
-          if (tokenField) tokenField.value = token;
+          if (!token) { show('reCAPTCHA token missing.'); btn.disabled = false; return; }
+          // Append token
+          document.getElementById('g-recaptcha-response').value = token;
 
           show('Sending…');
-
           try {
-            const res = await fetch(form.action, {
+            const res = await fetch(formEl.action, {
               method: 'POST',
-              body: new FormData(form),
+              body: new FormData(formEl),         // use e.currentTarget again
               headers: { 'Accept': 'application/json' }
             });
-
-            // If we got here, the network is fine; check HTTP status
             if (res.ok) {
-              form.reset();
+              formEl.reset();
               show('Thanks! Your message has been sent.');
             } else {
-              let details = '';
-              try {
-                const data = await res.json();
-                details = data.errors ? data.errors.map(e => e.message).join(', ') : JSON.stringify(data);
-              } catch (_) {}
-              show(`Formspree responded with ${res.status}. ${details || ''}`.trim());
+              const data = await res.json().catch(()=>({}));
+              show(data.errors ? data.errors.map(e=>e.message).join(', ') : `Error ${res.status}`);
             }
-          } catch (err) {
-            // This means CORS/CSP/Network truly blocked it
-            console.error('Network/CORS error:', err);
-            show('Network/CORS error. Check CSP, ad blockers, or Allowed Domains.');
+          } catch {
+            show('Network/CORS blocked. Falling back to direct submit…');
+            formEl.removeEventListener('submit', onSubmit); // avoid loop
+            formEl.submit(); // native POST (bypasses fetch/CORS)
           } finally {
             btn.disabled = false;
           }
         })
-        .catch((err) => {
-          console.error('reCAPTCHA error:', err);
-          show('reCAPTCHA could not generate a token (key/domain mismatch or blocked).');
-          btn.disabled = false;
-        });
+        .catch(() => { show('reCAPTCHA could not generate a token.'); btn.disabled = false; });
     });
   });
-</script>
-<script>
-(function(){
-  // Report CSP violations clearly
-  window.addEventListener('securitypolicyviolation', function(e){
-    console.warn('[CSP BLOCKED]', 'directive:', e.effectiveDirective, 'blocked:', e.blockedURI);
-  });
-
-  // Quick environment probes
-  console.log('[ORIGIN]', location.origin);
-  console.log('[SW registered?]', !!navigator.serviceWorker);
-  if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
-    navigator.serviceWorker.getRegistrations().then(rs => {
-      console.log('[SW registrations]', rs.map(r => r.scope));
-    });
-  }
-
-  // Try a simple fetch to Formspree to see if connect-src is blocked
-  fetch('https://formspree.io/', { method: 'HEAD' })
-    .then(r => console.log('[HEAD formspree.io]', r.status))
-    .catch(err => console.error('[HEAD formspree.io ERROR]', err.name, err.message));
-
-  // Also try the API host
-  fetch('https://api.formspree.io/', { method: 'HEAD' })
-    .then(r => console.log('[HEAD api.formspree.io]', r.status))
-    .catch(err => console.error('[HEAD api.formspree.io ERROR]', err.name, err.message));
-})();
+});
 </script>
 
 
