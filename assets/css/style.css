@@ -1610,3 +1610,44 @@ ul.side-nav.fixed li.logo {
 ul.side-nav.fixed li.logo + li {
   margin-top: 8px !important;
 }
+
+/* === TIGHTEN LOGO + PHOTO SPACING === */
+ul.side-nav.fixed li.logo {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  padding: 20px 0 0 !important;    /* only top padding for breathing space */
+  margin: 0 !important;
+  min-height: auto !important;     /* remove forced tall height */
+  border-bottom: none !important;  /* optional, removes line under photo */
+  background: #fafafa !important;
+}
+
+/* Profile picture sizing */
+.profile-pic {
+  width: 140px !important;
+  height: 140px !important;
+  margin: 0 auto 12px auto !important; /* 12px bottom gap before menu items */
+  border: 4px solid rgba(0, 77, 64, 0.4) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+}
+
+.profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Remove any extra top margin from first nav item */
+ul.side-nav.fixed li.logo + li {
+  margin-top: 0 !important;
+}
