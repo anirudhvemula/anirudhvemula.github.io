@@ -238,7 +238,7 @@ dt {
 }
 
 ul.side-nav {
-  width: 190px;
+  width: 240px;
 }
 
 ul.side-nav li {
@@ -809,29 +809,17 @@ small {
 }
 
 
-/* === Final fix: align side-nav icons + labels === */
-ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
-  display: flex !important;
-  align-items: center !important;   /* vertical centering */
-  gap: 10px;                        /* space between icon + text */
-  padding: 10px 14px !important;
-  line-height: 1.5 !important;      /* reset Materialize 100% */
-  height: auto !important;
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a i,
+ul.side-nav.fixed li:not(.logo) > a i,
+ul#nav-mobile li:not(.logo) > a i {
+  font-size: 22px !important;   /* was 16px */
+  width: 28px !important;       /* keeps text aligned */
+  line-height: 22px !important;
 }
 
-/* === NAVIGATION ICON ALIGNMENT FIXES === */
-
-/* Desktop Side Navigation - Icon and Text Alignment */
-ul.side-nav.fixed.table-of-contents li:not(.logo) > a {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  padding: 12px 20px !important;
-  line-height: 1.4 !important;
-  height: auto !important;
-  box-sizing: content-box;
-  color: #333 !important;
-  transition: all 0.3s ease;
+/* Increase text size slightly to match bigger icons */
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a span {
+  font-size: 16px !important;   /* was 14px */
 }
 
 /* Icon Styling - Consistent Width and Alignment */
