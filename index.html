@@ -1044,17 +1044,17 @@ of each drug container to estimate the degradation of the drug.
 	  <br>
 		<form action="https://formspree.io/f/mnnzkyoa" method="POST" id="contact" novalidate>
 			  <label>
-				Your name
+				Please enter your Name:
 				<input type="text" name="name" required>
 			  </label>
 
 			  <label>
-				Your email
+				Please enter your Email ID:
 				<input type="email" name="email" required>
 			  </label>
 
 			  <label>
-				Message
+				Please enter your Message:
 				<textarea name="message" rows="6" required></textarea>
 			  </label>
 
@@ -1222,6 +1222,33 @@ of each drug container to estimate the degradation of the drug.
         });
     });
   });
+</script>
+<script>
+(function(){
+  // Report CSP violations clearly
+  window.addEventListener('securitypolicyviolation', function(e){
+    console.warn('[CSP BLOCKED]', 'directive:', e.effectiveDirective, 'blocked:', e.blockedURI);
+  });
+
+  // Quick environment probes
+  console.log('[ORIGIN]', location.origin);
+  console.log('[SW registered?]', !!navigator.serviceWorker);
+  if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+    navigator.serviceWorker.getRegistrations().then(rs => {
+      console.log('[SW registrations]', rs.map(r => r.scope));
+    });
+  }
+
+  // Try a simple fetch to Formspree to see if connect-src is blocked
+  fetch('https://formspree.io/', { method: 'HEAD' })
+    .then(r => console.log('[HEAD formspree.io]', r.status))
+    .catch(err => console.error('[HEAD formspree.io ERROR]', err.name, err.message));
+
+  // Also try the API host
+  fetch('https://api.formspree.io/', { method: 'HEAD' })
+    .then(r => console.log('[HEAD api.formspree.io]', r.status))
+    .catch(err => console.error('[HEAD api.formspree.io ERROR]', err.name, err.message));
+})();
 </script>
 
 
