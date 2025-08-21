@@ -1032,30 +1032,36 @@ of each drug container to estimate the degradation of the drug.
               class="hoverline" target="_blank">Linkedin.com/in/anirudh-vemula</a></a>
         </p>
       </div>
+	  <br><br>
+	  Please use the form below to contact me:
+	  <br>
 		<form action="https://formspree.io/f/mnnzkyoa" method="POST" id="contact" novalidate>
-		  <label>
-			Your name
-			<input type="text" name="name" required>
-		  </label>
+			  <label>
+				Your name
+				<input type="text" name="name" required>
+			  </label>
 
-		  <label>
-			Your email
-			<input type="email" name="email" required>
-		  </label>
+			  <label>
+				Your email
+				<input type="email" name="email" required>
+			  </label>
 
-		  <label>
-			Message
-			<textarea name="message" rows="6" required></textarea>
-		  </label>
+			  <label>
+				Message
+				<textarea name="message" rows="6" required></textarea>
+			  </label>
 
-		  <!-- Honeypot (hidden field to trap bots) -->
-		  <input type="text" name="_honey" style="display:none">
-	  
-		<button class="g-recaptcha" data-sitekey="6LcQgK0rAAAAANXIYAA6zvNHpBszHnkLevSMzpYJ"
-            data-callback='onSubmit' data-action='submit'>Send</button>
-		
+			  <!-- Honeypot -->
+			  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+			  <!-- Placeholder for reCAPTCHA v3 token -->
+			  <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+			  <!-- Optional: pass action for your own analytics/debugging -->
+			  <input type="hidden" name="g-recaptcha-action" id="g-recaptcha-action" value="contact_form">
+
+			  <button type="submit" id="submitBtn">Send</button>
 		</form>
-	<p id="form-status" role="status" aria-live="polite"></p>
+		<p id="form-status" role="status" aria-live="polite"></p>
 
     </section>
   </main>
@@ -1123,7 +1129,49 @@ of each drug container to estimate the degradation of the drug.
     });
   });
 </script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcQgK0rAAAAANXIYAA6zvNHpBszHnkLevSMzpYJ"></script>
 
+<script>
+  const form = document.getElementById('contact');
+  const statusEl = document.getElementById('form-status');
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    statusEl.textContent = 'Verifying…';
+
+    // Ensure the API is ready, then request a token for your chosen action
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LcQgK0rAAAAANXIYAA6zvNHpBszHnkLevSMzpYJ', { action: 'contact_form' }).then(async function (token) {
+        // Add token to the form
+        document.getElementById('g-recaptcha-response').value = token;
+
+        statusEl.textContent = 'Sending…';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            form.reset();
+            statusEl.textContent = 'Thanks! Your message has been sent.';
+          } else {
+            const data = await res.json().catch(() => ({}));
+            statusEl.textContent = (data.errors?.map(e => e.message).join(', ')) || 'Oops—something went wrong.';
+          }
+        } catch (err) {
+          statusEl.textContent = 'Network error. Please try again.';
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    });
+  });
+</script>
   
 </body>
 </html>
