@@ -14,8 +14,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N8TVCQK4');</script>
 <!-- End Google Tag Manager -->
 
-  <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Font Awesome Icon - CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Custom Styles-->
@@ -31,6 +31,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     gtag('config', 'UA-126939217-2');
   </script>
+  
+  
 
   <!-- Open Graph-->
   <meta property="og:locale" content="en_US" />
@@ -53,6 +55,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="robots" content="index, follow" />
   <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="g6_wMRkXyjGhMa27a6gQmVvapj3-7_atrJcDNB7fHng" />
+  
+  
 </head>
 
 <body>
@@ -75,7 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#about"><i class="fas fa-user"></i><span>About</span></a></li>
     <li><a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
     <li><a href="#projects"><i class="fas fa-sitemap"></i><span>Projects</span></a></li>
-	<li><a href="#skills"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+	<li><a href="#skills"><i class="fas fa-code"></i><span>Skills</span></a></li>
     <li><a href="#certifications"><i class="fas fa-scroll"></i><span>Certifications</span></a></li>
     <li><a href="#memberships"><i class="fas fa-users"></i><span>Memberships</span></a></li>
     <li><a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a></li>
@@ -103,7 +107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#about"><i class="fas fa-user"></i><span>About</span></a></li>
     <li><a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
     <li><a href="#projects"><i class="fas fa-sitemap"></i><span>Projects</span></a></li>
-	<li><a href="#skills"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+	<li><a href="#skills"><i class="fas fa-code"></i><span>Skills</span></a></li>
     <li><a href="#certifications"><i class="fas fa-scroll"></i><span>Certifications</span></a></li>
     <li><a href="#memberships"><i class="fas fa-users"></i><span>Memberships</span></a></li>
     <li><a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a></li>
@@ -1031,11 +1035,8 @@ of each drug container to estimate the degradation of the drug.
 </script>
 
 
-  <!-- jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <!-- Just before </body> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     // Materialize - Initializers
     $(document).ready(function () {
@@ -1049,9 +1050,12 @@ of each drug container to estimate the degradation of the drug.
     })
   </script>
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.tooltipped');
-    M.Tooltip.init(elems, {});
+  document.addEventListener('DOMContentLoaded', function () {
+    const elems = document.querySelectorAll('.tooltipped');
+    M.Tooltip.init(elems, {
+      // options go here (optional)
+      // enterDelay: 0, exitDelay: 0, margin: 5
+    });
   });
 </script>
 
