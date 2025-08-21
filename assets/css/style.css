@@ -1730,3 +1730,76 @@ ul.side-nav.fixed li.logo {
 ul.side-nav.fixed li.logo::after {
   content: none !important;   /* remove the fake spacer since divider handles spacing */
 }
+
+/* --- DESKTOP SIDENAV: fix photo clipping + spacing + divider --- */
+
+/* Make the desktop nav container tall enough so nothing is clipped */
+nav.hide-on-small-only {
+  height: auto !important;
+  overflow: visible !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure the UL itself doesn't collapse */
+nav.hide-on-small-only ul#nav-mobile {
+  padding-top: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+/* Logo block: center image, give it enough height, add divider */
+nav.hide-on-small-only ul#nav-mobile li.logo {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+
+  /* breathing space above the photo */
+  padding: 20px 0 12px !important;
+
+  /* make sure the list can't slide up next to the photo */
+  min-height: 172px !important;           /* 160px photo + 12px padding */
+  margin: 0 !important;
+
+  border-bottom: 1px solid #e5e5e5 !important;  /* subtle divider */
+  background: #fafafa !important;
+}
+
+/* Profile photo */
+nav.hide-on-small-only ul#nav-mobile li.logo .profile-pic {
+  width: 160px !important;
+  height: 160px !important;
+  margin: 0 auto !important;
+  border: 4px solid rgba(0, 77, 64, 0.4) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+}
+nav.hide-on-small-only ul#nav-mobile li.logo .profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* First menu item must always start below the logo block */
+nav.hide-on-small-only ul#nav-mobile li.logo + li {
+  margin-top: 8px !important;
+  clear: both !important;
+}
+
+/* Make each menu row occupy a full line (prevents side-by-side) */
+nav.hide-on-small-only ul#nav-mobile > li {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Slightly larger labels to match the bigger icons */
+nav.hide-on-small-only ul#nav-mobile li:not(.logo) > a span {
+  font-size: 16px !important;
+}
