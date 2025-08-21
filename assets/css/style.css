@@ -1651,3 +1651,82 @@ ul.side-nav.fixed li.logo {
 ul.side-nav.fixed li.logo + li {
   margin-top: 0 !important;
 }
+
+/* 1) Let the nav be tall enough + show contents */
+nav.hide-on-small-only {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* 2) Logo block: center the photo and reserve space below it */
+ul.side-nav.fixed li.logo {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 20px 0 0 !important;   /* small breathing space above */
+  margin: 0 !important;
+  min-height: auto !important;     /* no forced tall block */
+  border-bottom: none !important;
+  position: relative !important;
+}
+
+/* create a guaranteed gap under the photo so the list starts below */
+ul.side-nav.fixed li.logo::after {
+  content: "" !important;
+  display: block !important;
+  height: 12px !important;        /* tweak this for more/less gap */
+}
+
+/* 3) Profile picture sizing & perfect centering */
+.profile-pic {
+  width: 140px !important;
+  height: 140px !important;
+  margin: 0 auto !important;      /* centers in logo block */
+  border: 4px solid rgba(0, 77, 64, 0.4) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+}
+.profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* 4) First item must start on a new row, below the logo */
+ul.side-nav.fixed li.logo + li {
+  margin-top: 0 !important;
+  clear: both !important;
+}
+
+/* 5) Keep items single-column, labels a bit larger */
+ul.side-nav.fixed li:not(.logo) > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 20px !important;
+  min-height: 48px !important;
+  width: 100% !important;
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
+}
+ul.side-nav.fixed li:not(.logo) > a span {
+  font-size: 16px !important;     /* slightly larger text */
+}
+
+/* Divider line below profile picture */
+ul.side-nav.fixed li.logo {
+  border-bottom: 1px solid #ddd !important;   /* light grey line */
+  padding-bottom: 16px !important;            /* space between photo and divider */
+  margin-bottom: 8px !important;              /* small gap before first menu item */
+}
+
+ul.side-nav.fixed li.logo::after {
+  content: none !important;   /* remove the fake spacer since divider handles spacing */
+}
