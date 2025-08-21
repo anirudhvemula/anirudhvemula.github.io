@@ -1412,3 +1412,62 @@ ul.side-nav.fixed li.logo {
   min-height: 200px !important;   /* was ~140px */
   padding: 20px !important;
 }
+
+/* === FINAL OVERRIDES: wider sidebar + bigger icons + larger profile === */
+
+/* 1) Sidebar width (desktop) */
+ul.side-nav,
+ul.side-nav.fixed,
+ul#nav-mobile {
+  width: 260px !important;              /* was 185/190/240 in different places */
+}
+main {
+  padding-left: 260px !important;       /* match the wider sidebar */
+}
+
+/* 2) Nav item layout */
+ul.side-nav.fixed.table-of-contents li:not(.logo) > a,
+ul.side-nav.fixed li:not(.logo) > a,
+ul#nav-mobile li:not(.logo) > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 20px !important;
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+  font-size: 16px !important;           /* larger labels */
+}
+
+/* 3) Icon sizing */
+ul.side-nav.fixed li:not(.logo) > a i,
+ul#nav-mobile li:not(.logo) > a i {
+  font-size: 22px !important;           /* bigger icons */
+  width: 28px !important;
+  line-height: 22px !important;
+  flex-shrink: 0 !important;
+}
+
+/* 4) Profile picture (logo area) */
+.profile-pic {
+  width: 160px !important;              /* bigger headshot */
+  height: 160px !important;
+  margin: 0 auto !important;
+  border: 5px solid rgba(0, 77, 64, 0.4) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f5f5f5 !important;
+}
+.profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* give the logo row more room for the larger image */
+ul.side-nav.fixed li.logo {
+  min-height: 220px !important;
+  padding: 24px !important;
+}
