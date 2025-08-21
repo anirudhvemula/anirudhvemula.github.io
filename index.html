@@ -5,6 +5,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' https://www.google.com https://www.gstatic.com https://www.recaptcha.net;
+  connect-src 'self' https://formspree.io https://api.formspree.io;
+  frame-src https://www.google.com https://www.recaptcha.net;
+  img-src 'self' data:;
+  style-src 'self' 'unsafe-inline';
+  base-uri 'self';
+  ">
+
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
