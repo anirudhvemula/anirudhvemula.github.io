@@ -1283,6 +1283,23 @@ section,
   padding-bottom: 0px;   /* was 60px */
 }
 
+#contact .section-title {
+  padding-bottom: 10px;   /* was 60px */
+  margin-bottom: 0;
+}
+
+/* Revision date in hero */
+#hero .revision-date {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 0.7rem;
+  color: #ddd;
+  font-style: italic;
+  z-index: 2;
+}
+
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
