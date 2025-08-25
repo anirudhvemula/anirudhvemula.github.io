@@ -1297,6 +1297,70 @@ section,
   margin-bottom: 0;
 }
 
+#blogs.section {
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#blogs .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
+#publications .section {
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#publications .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
+#skills .section {
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#skills .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
+#portfolio .section {
+  padding-top: 12px !important;
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#portfolio .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
+#certifications .section {
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#certifications .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
+#memberships .section {
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#memberships .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
+#awards .section {
+  padding-bottom: 20px;  /* adjust to taste, e.g. 0–30px */
+}
+
+#awards .section-title {
+  padding-bottom: 10px;  /* your current override */
+  margin-bottom: 0;
+}
+
 /* Revision date in hero */
 /* Revision date in hero (fixed: no flicker) */
 #hero .revision-date {
